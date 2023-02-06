@@ -49,10 +49,12 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("hit ground");
         //check if landed on top of a platform object
         if (collision.collider.CompareTag("ground") && collision.transform.position.y < this.transform.position.y)
         {
             grounded = true;
+            
         }
     }
 }
