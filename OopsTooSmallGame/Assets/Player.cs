@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown("up"))
         {
+            
             jumpPressed = true;
         }
     }
@@ -41,6 +42,7 @@ public class Player : MonoBehaviour
 
         if (jumpPressed && grounded)
         {
+            Debug.Log("Jump Pressed and grounded");
             rigbod.velocity = new Vector2(rigbod.velocity.x, jumpPower);
             grounded = false;
             jumpPressed = false;
@@ -49,10 +51,11 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("hit ground");
+        
         //check if landed on top of a platform object
-        if (collision.collider.CompareTag("ground") && collision.transform.position.y < this.transform.position.y)
+        if (collision.collider.CompareTag("ground"))
         {
+
             grounded = true;
             
         }
