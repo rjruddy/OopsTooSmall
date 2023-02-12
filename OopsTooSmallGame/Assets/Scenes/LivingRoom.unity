@@ -626,7 +626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2794217234243016610, guid: ea27955c9f1294a9c80778aabbad8e4e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03
+      value: -0.61
       objectReference: {fileID: 0}
     - target: {fileID: 2794217234243016610, guid: ea27955c9f1294a9c80778aabbad8e4e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -728,7 +728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2794217234243016610, guid: ea27955c9f1294a9c80778aabbad8e4e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.23
+      value: -2.94
       objectReference: {fileID: 0}
     - target: {fileID: 2794217234243016610, guid: ea27955c9f1294a9c80778aabbad8e4e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1175,8 +1175,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.4370117, y: 0.010590468}
-  m_Size: {x: 1.5957464, y: 1.081938}
+  m_Offset: {x: -0.06931929, y: 0.0000005494188}
+  m_Size: {x: 1.7343853, y: 1.629452}
   m_Direction: 0
 --- !u!1001 &1240881089
 PrefabInstance:
@@ -2436,11 +2436,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2794217234243016610, guid: ea27955c9f1294a9c80778aabbad8e4e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.93
+      value: -2.73
       objectReference: {fileID: 0}
     - target: {fileID: 2794217234243016610, guid: ea27955c9f1294a9c80778aabbad8e4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4526745
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2794217234243016610, guid: ea27955c9f1294a9c80778aabbad8e4e, type: 3}
       propertyPath: m_LocalPosition.z
