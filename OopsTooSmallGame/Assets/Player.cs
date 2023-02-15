@@ -9,10 +9,12 @@ public class Player : MonoBehaviour
     public float jumpPower = 10f;
     bool grounded;
     bool jumpPressed;
+    public Vector3 start_pos = new Vector3(-18, 3.5f, -5);
 
     // Start is called before the first frame update
     void Start()
     {
+        this.gameObject.transform.position = start_pos;
         rigbod = this.GetComponent<Rigidbody2D>();
         grounded = false;
         jumpPressed = false;
@@ -25,6 +27,11 @@ public class Player : MonoBehaviour
         {
             
             jumpPressed = true;
+        }
+
+        if (this.gameObject.transform.position.y < -12)
+        {
+            this.gameObject.transform.position = start_pos;
         }
     }
 
