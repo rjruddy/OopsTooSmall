@@ -1,34 +1,24 @@
 ﻿<Properties StartupConfiguration="{5136F875-E912-98EF-5F77-72E56978A8AB}|">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b19c9b9f-3b6a-41a1-9341-51be6279bef3" />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CameraScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player.cs">
     <Files>
-      <File FileName="Assets/Player.cs" Line="32" Column="55" />
-      <File FileName="Assets/CameraScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Player.cs" Line="65" Column="56" />
+      <File FileName="Assets/CameraScript.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="OopsTooSmallGame" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="CameraScript.cs" selected="True" />
-            </Node>
+            <Node name="Assets" expanded="True" />
           </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="Unity" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5ab42bf5-0cf9-4139-9b4a-e05d185bd35d" />
 </Properties>
