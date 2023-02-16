@@ -9,10 +9,12 @@ public class Player : MonoBehaviour
     public float jumpPower = 10f;
     bool grounded;
     bool jumpPressed;
+    public Vector3 start_pos = new Vector3(-18, 3.5f, -5);
 
     // Start is called before the first frame update
     void Start()
     {
+        this.gameObject.transform.position = start_pos;
         rigbod = this.GetComponent<Rigidbody2D>();
         grounded = false;
         jumpPressed = false;
@@ -21,9 +23,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame -- used to detect key presses
     private void Update()
     {
-        if (Input.GetKeyDown("up") && grounded)
+        if (Input.GetKeyDown("up"))
         {
+            
             jumpPressed = true;
+        }
+
+        if (this.gameObject.transform.position.y < -12)
+        {
+            this.gameObject.transform.position = start_pos;
         }
     }
 
@@ -41,6 +49,7 @@ public class Player : MonoBehaviour
 
         if (jumpPressed && grounded)
         {
+            Debug.Log("Jump Pressed and grounded");
             rigbod.velocity = new Vector2(rigbod.velocity.x, jumpPower);
             grounded = false;
             jumpPressed = false;
@@ -49,12 +58,11 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
+        
         //check if landed on top of a platform object
-        float collider_top_y = collision.transform.position.y + (collision.collider.transform.localScale.y / 2);
-        if (collision.collider.CompareTag("ground") &&
-            collider_top_y < rigbod.position.y)
+        if (collision.collider.CompareTag("ground"))
         {
+
             grounded = true;
             
         }
