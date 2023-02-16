@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
 
     private bool isGrounded;
     private bool isWalled;
+    private bool isWallJumping;
     private bool jumpPressed;
     private bool canWallJump;
     private float horizontal;
@@ -37,7 +38,7 @@ public class Player : MonoBehaviour
         isWalled = Physics2D.OverlapCircle(wallCheck.position,
                                             wallCheckRadius,
                                             groundLayer);
-        if (Input.GetKeyDown("up") && isGrounded)
+        if (Input.GetKey("up") && (isGrounded || isWalled))
         {
             jumpPressed = true;
         }
@@ -48,7 +49,7 @@ public class Player : MonoBehaviour
     {
         TryMove();
         TryJump();
-        TryWallSlide();
+        TryWallBehavior();
     }
 
     private void TryMove()
@@ -56,10 +57,10 @@ public class Player : MonoBehaviour
         // movement achieved by manipulating velocity
         if (horizontal > 0)
         {
-            transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            transform.eulerAngles = new Vector3(0, 0, 0);
         } else if (horizontal < 0)
         {
-            transform.localScale = new Vector3((-1)*transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            transform.eulerAngles = new Vector3(0, 180, 0);
         }
         rigbod.velocity = new Vector2(horizontal * walkSpeed, rigbod.velocity.y);
 
@@ -73,18 +74,20 @@ public class Player : MonoBehaviour
             rigbod.velocity = new Vector2(rigbod.velocity.x, jumpPower);
             jumpPressed = false;
         }
+        if (jumpPressed && isWalled)
+        {
+            rigbod.velocity = new Vector2(rigbod.velocity.x, jumpPower);
+            jumpPressed = false;
+        }
     }
 
-    private void TryWallSlide()
+    private void TryWallBehavior()
     {
-        if (isWalled)
+        //wall slide
+        if (isWalled && !isWallJumping)
         {
             rigbod.velocity = new Vector2(rigbod.velocity.x, Mathf.Clamp(rigbod.velocity.y, -wallSlideSpeed, 100));
         }
     }
 
-    private void TryWallJump()
-    {
-
-    }
 }

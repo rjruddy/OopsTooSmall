@@ -2198,7 +2198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
-  jumpPower: 10
+  jumpPower: 6.5
   groundCheck: {fileID: 954759085}
   wallCheck: {fileID: 733899877}
   wallCheckRadius: 0.1
