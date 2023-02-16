@@ -7,31 +7,40 @@ public class Player : MonoBehaviour
     Rigidbody2D rigbod;
     public float walkSpeed = 5f;
     public float jumpPower = 10f;
-    bool grounded;
-    bool jumpPressed;
-    public Vector3 start_pos = new Vector3(-18, 3.5f, -5);
+    public Transform groundCheck;
+    public Transform wallCheck;
+    public float wallCheckRadius;
+    public float groundCheckRadius;
+    public float wallSlideSpeed;
+    public LayerMask groundLayer;
+
+    private bool isGrounded;
+    private bool isWalled;
+    private bool isWallJumping;
+    private bool jumpPressed;
+    private bool canWallJump;
+    private float horizontal;
+    private Vector2 wallNormal;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.gameObject.transform.position = start_pos;
         rigbod = this.GetComponent<Rigidbody2D>();
-        grounded = false;
-        jumpPressed = false;
     }
 
     // Update is called once per frame -- used to detect key presses
     private void Update()
     {
-        if (Input.GetKeyDown("up"))
+        horizontal = Input.GetAxis("Horizontal");
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position,
+                                            groundCheckRadius,
+                                            groundLayer);
+        isWalled = Physics2D.OverlapCircle(wallCheck.position,
+                                            wallCheckRadius,
+                                            groundLayer);
+        if (Input.GetKey("up") && (isGrounded || isWalled))
         {
-            
             jumpPressed = true;
-        }
-
-        if (this.gameObject.transform.position.y < -12)
-        {
-            this.gameObject.transform.position = start_pos;
         }
     }
 
@@ -39,32 +48,46 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         TryMove();
+        TryJump();
+        TryWallBehavior();
     }
 
-    void TryMove()
+    private void TryMove()
     {
         // movement achieved by manipulating velocity
-        float horizontal = Input.GetAxis("Horizontal");
+        if (horizontal > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        } else if (horizontal < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
         rigbod.velocity = new Vector2(horizontal * walkSpeed, rigbod.velocity.y);
 
-        if (jumpPressed && grounded)
+        //TryJump();
+    }
+
+    private void TryJump()
+    {
+        if (jumpPressed && isGrounded)
         {
-            Debug.Log("Jump Pressed and grounded");
             rigbod.velocity = new Vector2(rigbod.velocity.x, jumpPower);
-            grounded = false;
+            jumpPressed = false;
+        }
+        if (jumpPressed && isWalled)
+        {
+            rigbod.velocity = new Vector2(rigbod.velocity.x, jumpPower);
             jumpPressed = false;
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void TryWallBehavior()
     {
-        
-        //check if landed on top of a platform object
-        if (collision.collider.CompareTag("ground"))
+        //wall slide
+        if (isWalled && !isWallJumping)
         {
-
-            grounded = true;
-            
+            rigbod.velocity = new Vector2(rigbod.velocity.x, Mathf.Clamp(rigbod.velocity.y, -wallSlideSpeed, 100));
         }
     }
+
 }
