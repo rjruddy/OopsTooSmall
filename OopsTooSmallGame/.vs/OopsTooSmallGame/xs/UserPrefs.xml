@@ -1,9 +1,16 @@
 ﻿<Properties StartupConfiguration="{5136F875-E912-98EF-5F77-72E56978A8AB}|">
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player.cs">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a6de747e-188b-43d1-98ff-946444c46b3b" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/TitleScreen.cs">
     <Files>
       <File FileName="Assets/Player.cs" Line="65" Column="56" />
       <File FileName="Assets/CameraScript.cs" />
+      <File FileName="Assets/TitleScreen.cs" Line="26" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,10 +22,4 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5ab42bf5-0cf9-4139-9b4a-e05d185bd35d" />
 </Properties>
