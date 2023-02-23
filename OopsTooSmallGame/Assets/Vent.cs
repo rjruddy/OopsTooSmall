@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Vent : MonoBehaviour
 {
@@ -14,5 +15,12 @@ public class Vent : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // this will work as a temporary solution for one scene transition, until we have a proper scene manager.
+        Debug.Log("hit vent");
+        SceneManager.LoadScene("Kitchen");
     }
 }

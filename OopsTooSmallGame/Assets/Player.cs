@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public float groundCheckRadius;
     public float wallSlideSpeed;
     public LayerMask groundLayer;
+    public float deathLowBound;
 
     private bool isGrounded;
     private bool isWalled;
@@ -21,10 +22,12 @@ public class Player : MonoBehaviour
     private bool canWallJump;
     private float horizontal;
     private Vector2 wallNormal;
+    private Vector3 startPos;
 
     // Start is called before the first frame update
     void Start()
     {
+        startPos = this.gameObject.transform.position;
         rigbod = this.GetComponent<Rigidbody2D>();
     }
 
@@ -41,6 +44,12 @@ public class Player : MonoBehaviour
         if (Input.GetKey("up") && (isGrounded || isWalled))
         {
             jumpPressed = true;
+        }
+         //If lives being lost needs to be implemented, add it within this
+         //if statement
+        if(this.gameObject.transform.position.y < deathLowBound)
+        {
+            this.gameObject.transform.position = startPos;
         }
     }
 
