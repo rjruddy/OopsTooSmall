@@ -878,7 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startScene: LivingRoom
-  tutorialScene: SampleScene
+  tutorialScene: Tutorial
 --- !u!1 &2102558716
 GameObject:
   m_ObjectHideFlags: 0

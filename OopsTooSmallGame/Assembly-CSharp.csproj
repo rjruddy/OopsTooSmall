@@ -56,10 +56,11 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/MonoBundle/Addins/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/Instructions.cs" />
     <Compile Include="Assets/Vent.cs" />
-    <Compile Include="Assets/CameraScript.cs" />
+    <Compile Include="Assets/Scripts/CameraScript.cs" />
     <Compile Include="Assets/Player.cs" />
-    <Compile Include="Assets/TitleScreen.cs" />
+    <Compile Include="Assets/Scripts/TitleScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
