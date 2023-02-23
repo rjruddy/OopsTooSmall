@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     private bool jumpPressed;
     private bool canWallJump;
     private float horizontal;
+    private int health;
     private Vector2 wallNormal;
     private Vector3 startPos;
 
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
     {
         startPos = this.gameObject.transform.position;
         rigbod = this.GetComponent<Rigidbody2D>();
+        health = 3;
     }
 
     // Update is called once per frame -- used to detect key presses
@@ -49,6 +51,11 @@ public class Player : MonoBehaviour
          //if statement
         if(this.gameObject.transform.position.y < deathLowBound)
         {
+            DecreaseHealth();
+            if (health == 0)
+            {
+
+            }
             this.gameObject.transform.position = startPos;
         }
     }
@@ -97,6 +104,16 @@ public class Player : MonoBehaviour
         {
             rigbod.velocity = new Vector2(rigbod.velocity.x, Mathf.Clamp(rigbod.velocity.y, -wallSlideSpeed, 100));
         }
+    }
+
+    public void DecreaseHealth()
+    {
+        health -= 1;
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 
 }

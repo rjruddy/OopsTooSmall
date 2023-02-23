@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LivesUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Sprite fullHeart, emptyHeart;
+    Image heartA, heartB, heartC;
+
+
+    private void Awake()
     {
         
     }
@@ -14,5 +18,10 @@ public class LivesUI : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void DecreaseHealth()
+    {
+
     }
 }
