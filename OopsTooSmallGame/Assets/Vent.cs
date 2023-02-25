@@ -19,8 +19,20 @@ public class Vent : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // this will work as a temporary solution for one scene transition, until we have a proper scene manager.
-        Debug.Log("hit vent");
-        SceneManager.LoadScene("Kitchen");
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        int prevSceneIndex = SceneManager.GetActiveScene().buildIndex - 1;
+
+        if (gameObject.tag == "f-vent" && SceneManager.sceneCountInBuildSettings > nextSceneIndex) {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+
+        else if (gameObject.tag == "b-vent" && prevSceneIndex >= 0) {
+            SceneManager.LoadScene(prevSceneIndex);
+        }    
+       
+        else {
+            Debug.Log("No more scenes to load");
+        }  
+        
     }
 }
