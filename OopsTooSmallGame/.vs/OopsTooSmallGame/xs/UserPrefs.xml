@@ -1,25 +1,33 @@
 ﻿<Properties StartupConfiguration="{5136F875-E912-98EF-5F77-72E56978A8AB}|">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a6de747e-188b-43d1-98ff-946444c46b3b" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/TitleScreen.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/TextMesh Pro/Fonts/3dumb/Tension Type Font License.txt">
     <Files>
-      <File FileName="Assets/Player.cs" Line="65" Column="56" />
-      <File FileName="Assets/CameraScript.cs" />
-      <File FileName="Assets/TitleScreen.cs" Line="26" Column="6" />
+      <File FileName="Assets/Scripts/LivesUI.cs" Line="23" Column="16" />
+      <File FileName="Assets/Scripts/TitleScreen.cs" Line="14" Column="9" />
+      <File FileName="Assets/Scripts/Vent.cs" Line="1" Column="1" />
+      <File FileName="Assets/TextMesh Pro/Fonts/3dumb/Tension Type Font License.txt" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="OopsTooSmallGame" expanded="True">
-            <Node name="Assets" expanded="True" />
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True" />
+              <Node name="TextMesh Pro" expanded="True">
+                <Node name="Fonts" expanded="True">
+                  <Node name="3dumb" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8c0641cf-1db9-4cfa-a905-4bdef259b700" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
 </Properties>
