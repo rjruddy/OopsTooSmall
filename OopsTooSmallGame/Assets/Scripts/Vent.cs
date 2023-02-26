@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Vent : MonoBehaviour
 {
+    public string destinationScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,6 @@ public class Vent : MonoBehaviour
     {
         // this will work as a temporary solution for one scene transition, until we have a proper scene manager.
         Debug.Log("hit vent");
-        SceneManager.LoadScene("Kitchen");
+        SceneManager.LoadScene(destinationScene);
     }
 }
