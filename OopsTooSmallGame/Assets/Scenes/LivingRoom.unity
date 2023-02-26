@@ -1332,7 +1332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_character: {fileID: 2051529638}
   screen_height: 3
-  screen_width: 10
+  screen_width: 9
 --- !u!4 &1337574247 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2794217234243016610, guid: ea27955c9f1294a9c80778aabbad8e4e, type: 3}
@@ -2388,7 +2388,7 @@ Transform:
   m_GameObject: {fileID: 2051529638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.66, y: 2.26, z: -0.1456731}
-  m_LocalScale: {x: 3.2109149, y: 2.5713425, z: 1.0442}
+  m_LocalScale: {x: 3, y: 3, z: 1.0442}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 699387395}
