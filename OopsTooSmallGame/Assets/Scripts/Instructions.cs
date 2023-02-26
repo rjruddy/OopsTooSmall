@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Vent : MonoBehaviour
+public class Instructions : MonoBehaviour
 {
+    public string titleScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,10 @@ public class Vent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+         if (Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene(titleScene);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
