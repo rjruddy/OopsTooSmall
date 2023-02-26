@@ -2103,6 +2103,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  deathLowBound: -15
 --- !u!212 &2051529640
 SpriteRenderer:
   m_ObjectHideFlags: 0
