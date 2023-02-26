@@ -43,7 +43,8 @@ public class Player : MonoBehaviour
         isWalled = Physics2D.OverlapCircle(wallCheck.position,
                                             wallCheckRadius,
                                             groundLayer);
-        if (Input.GetKey("up") && (isGrounded || isWalled))
+        bool upPressed = Input.GetKey("up") || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W);
+        if (upPressed && (isGrounded || isWalled))
         {
             jumpPressed = true;
         }
