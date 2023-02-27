@@ -1,24 +1,33 @@
 ﻿<Properties StartupConfiguration="{5136F875-E912-98EF-5F77-72E56978A8AB}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b4686335-2a2e-43c9-b484-0e9ca3596fa6" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player.cs">
-    <Files>
-      <File FileName="Assets/Player.cs" Line="65" Column="56" />
-      <File FileName="Assets/CameraScript.cs" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="OopsTooSmallGame" expanded="True">
-            <Node name="Assets" expanded="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5ab42bf5-0cf9-4139-9b4a-e05d185bd35d" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
+    <Files>
+      <File FileName="Assets/Scripts/TitleScreen.cs" />
+      <File FileName="Assets/Scripts/Vent.cs" />
+      <File FileName="Assets/TextMesh Pro/Fonts/3dumb/Tension Type Font License.txt" />
+      <File FileName="Assets/Scripts/Player.cs" Line="47" Column="22" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="OopsTooSmallGame" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True" />
+              <Node name="TextMesh Pro" expanded="True">
+                <Node name="Fonts" expanded="True">
+                  <Node name="3dumb" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
 </Properties>
