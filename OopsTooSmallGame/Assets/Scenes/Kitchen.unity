@@ -2039,7 +2039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_character: {fileID: 2051529638}
   screen_height: 2.5
-  screen_width: 9
+  screen_width: 8
 --- !u!1001 &1097594300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3011,8 +3011,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1976335896}
   - {fileID: 1375393449}
+  - {fileID: 1976335896}
   m_Father: {fileID: 177677174}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
