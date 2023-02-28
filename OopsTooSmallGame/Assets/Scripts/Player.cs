@@ -5,8 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody2D rigbod;
-    public float walkSpeed = 5f;
-    public float jumpPower = 10f;
+    public float walkSpeed;
+    public float jumpPower;
     public Transform groundCheck;
     public Transform wallCheck;
     public float wallCheckRadius;
@@ -110,6 +110,7 @@ public class Player : MonoBehaviour
     public void DecreaseHealth()
     {
         health -= 1;
+        HealthUI.SetText(string.Format("Player lives: " + health));
     }
 
     public int GetHealth()
