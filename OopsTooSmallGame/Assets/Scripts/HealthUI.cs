@@ -10,7 +10,7 @@ public class HealthUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthText = this.GetComponent<Text>();
+        //healthText = this.GetComponent<Text>();
     }
 
     // Update is called once per frame

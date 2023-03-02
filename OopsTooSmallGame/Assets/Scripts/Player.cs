@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
          //if statement
         if(this.gameObject.transform.position.y < deathLowBound)
         {
-            DecreaseHealth();
+            //DecreaseHealth();
             if (health == 0)
             {
 
