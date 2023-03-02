@@ -1,19 +1,26 @@
 ﻿<Properties StartupConfiguration="{5136F875-E912-98EF-5F77-72E56978A8AB}|">
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f6e23aa3-6297-4dd2-87a0-79b49f7aa08b" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/HealthUI.cs">
     <Files>
       <File FileName="Assets/Scripts/Player.cs" Line="58" Column="1" />
       <File FileName="Assets/Scripts/TitleScreen.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Vent.cs" />
-      <File FileName="Assets/TextMesh Pro/Fonts/3dumb/Tension Type Font License.txt" />
-      <File FileName="Assets/Scripts/HealthUI.cs" Line="24" Column="1" />
+      <File FileName="Assets/Scripts/Vent.cs" Line="1" Column="1" />
+      <File FileName="Assets/TextMesh Pro/Fonts/3dumb/Tension Type Font License.txt" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/HealthUI.cs" Line="13" Column="11" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="OopsTooSmallGame" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="HealthUI.cs" selected="True" />
+              </Node>
               <Node name="TextMesh Pro" expanded="True">
                 <Node name="Fonts" expanded="True">
                   <Node name="3dumb" expanded="True" />
@@ -21,6 +28,14 @@
               </Node>
             </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Unity" selected="True" />
         </State>
       </Pad>
     </Pads>
