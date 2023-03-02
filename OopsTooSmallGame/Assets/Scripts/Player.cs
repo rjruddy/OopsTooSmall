@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     private Vector2 wallNormal;
     private Vector3 startPos;
 
+    private Transform wallTransform;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,10 +54,10 @@ public class Player : MonoBehaviour
          //if statement
         if(this.gameObject.transform.position.y < deathLowBound)
         {
-            DecreaseHealth();
+            //DecreaseHealth();
             if (health == 0)
             {
-
+                //game over!
             }
             this.gameObject.transform.position = startPos;
         }
@@ -93,8 +95,14 @@ public class Player : MonoBehaviour
         }
         if (jumpPressed && isWalled)
         {
-            Vector2 force = -transform.forward * jumpPower;
-            rigbod.AddForce(force);
+            int modifier = 2;
+            //RIGHT WALL:
+            if (wallTransform.position.x < this.transform.position.x)
+            {
+                Debug.Log("wall is on the right");
+                modifier = -modifier;
+            }
+            rigbod.velocity = new Vector2(rigbod.velocity.x * modifier, jumpPower);
             jumpPressed = false;
         }
     }
@@ -108,15 +116,34 @@ public class Player : MonoBehaviour
         }
     }
 
+    /*
     public void DecreaseHealth()
     {
         health -= 1;
         HealthUI.SetText(string.Format("Player lives: " + health));
     }
+    */
 
     public int GetHealth()
     {
         return health;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("collision detected");
+        if (isWalled)
+        {
+            wallTransform = collision.collider.GetComponent<Transform>();
+            /*
+            //check if collision is a platform
+            if (collision.collider.GetComponent<SortingLayer>().ToString() == "Ground")
+            {
+                Debug.Log("platform collision detected");
+                wall = collision.collider.GetComponent<GameObject>();
+            }
+            */
+        }
     }
 
 }
