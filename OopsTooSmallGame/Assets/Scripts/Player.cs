@@ -93,7 +93,8 @@ public class Player : MonoBehaviour
         }
         if (jumpPressed && isWalled)
         {
-            rigbod.velocity = new Vector2(rigbod.velocity.x, jumpPower);
+            Vector2 force = -transform.forward * jumpPower;
+            rigbod.AddForce(force);
             jumpPressed = false;
         }
     }
