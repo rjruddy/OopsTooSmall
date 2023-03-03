@@ -7,11 +7,13 @@ public class Player : MonoBehaviour
     Rigidbody2D rigbod;
     public float walkSpeed;
     public float jumpPower;
+    public float wallJumpPower;
     public Transform groundCheck;
     public Transform wallCheck;
     public float wallCheckRadius;
     public float groundCheckRadius;
     public float wallSlideSpeed;
+    public float wjTime;
     public LayerMask groundLayer;
     public float deathLowBound;
 
@@ -66,7 +68,10 @@ public class Player : MonoBehaviour
     // used to implement movement
     void FixedUpdate()
     {
-        TryMove();
+        if (!isWallJumping)
+        {
+            TryMove();
+        }
         TryJump();
         TryWallBehavior();
     }
@@ -95,15 +100,17 @@ public class Player : MonoBehaviour
         }
         if (jumpPressed && isWalled)
         {
-            int modifier = 2;
+            isWallJumping = true;
+            float modifier = wallJumpPower;
             //RIGHT WALL:
-            if (wallTransform.position.x < this.transform.position.x)
+            if (wallTransform.position.x > this.transform.position.x)
             {
                 Debug.Log("wall is on the right");
                 modifier = -modifier;
             }
-            rigbod.velocity = new Vector2(rigbod.velocity.x * modifier, jumpPower);
+            rigbod.AddForce(new Vector2(modifier, jumpPower * 15));
             jumpPressed = false;
+            Invoke("DontWallJump", wjTime);
         }
     }
 
@@ -114,6 +121,11 @@ public class Player : MonoBehaviour
         {
             rigbod.velocity = new Vector2(rigbod.velocity.x, Mathf.Clamp(rigbod.velocity.y, -wallSlideSpeed, 100));
         }
+    }
+
+    private void DontWallJump()
+    {
+        isWallJumping = false;
     }
 
     /*

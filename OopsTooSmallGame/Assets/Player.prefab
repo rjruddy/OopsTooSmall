@@ -91,7 +91,7 @@ Transform:
   m_GameObject: {fileID: 3186787465662868407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6, y: 2.17, z: -0.1330423}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3186787464359532478}
@@ -211,12 +211,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
-  jumpPower: 10
+  jumpPower: 8
+  wallJumpPower: 90
   groundCheck: {fileID: 3186787464359532478}
   wallCheck: {fileID: 3186787464777393187}
   wallCheckRadius: 0.2
   groundCheckRadius: 0.2
   wallSlideSpeed: 2
+  wjTime: 0.2
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
