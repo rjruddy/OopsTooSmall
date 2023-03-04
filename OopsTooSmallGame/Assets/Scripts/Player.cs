@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         startPos = this.gameObject.transform.position;
         rigbod = this.GetComponent<Rigidbody2D>();
         health = 3;
-        // audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         jumpSound = Resources.Load<AudioClip>("Sounds/jump");
     }
 
