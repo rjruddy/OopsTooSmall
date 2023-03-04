@@ -137,17 +137,18 @@ MonoBehaviour:
   audioSource: {fileID: 4749236203791305016}
   walkSpeed: 5
   jumpPower: 8
-  wallJumpPower: 0
+  wallJumpPower: 80
   groundCheck: {fileID: 6634342890583248046}
   wallCheck: {fileID: 4749236203644703405}
   wallCheckRadius: 0.2
   groundCheckRadius: 0.2
   wallSlideSpeed: 2
-  wjTime: 0
+  wjTime: 0.2
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   deathLowBound: -15
+  health: {fileID: 0}
 --- !u!50 &4749236203791305022
 Rigidbody2D:
   serializedVersion: 4
