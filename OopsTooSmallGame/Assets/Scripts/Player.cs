@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public float wjTime;
     public LayerMask groundLayer;
     public float deathLowBound;
+    public HealthUI health;
 
     private bool isGrounded;
     private bool isWalled;
@@ -23,7 +24,7 @@ public class Player : MonoBehaviour
     private bool jumpPressed;
     private bool canWallJump;
     private float horizontal;
-    private int health;
+    //private int health;
     private Vector2 wallNormal;
     private Vector3 startPos;
 
@@ -34,7 +35,7 @@ public class Player : MonoBehaviour
     {
         startPos = this.gameObject.transform.position;
         rigbod = this.GetComponent<Rigidbody2D>();
-        health = 3;
+        //health = 3;
     }
 
     // Update is called once per frame -- used to detect key presses
@@ -56,10 +57,11 @@ public class Player : MonoBehaviour
          //if statement
         if(this.gameObject.transform.position.y < deathLowBound)
         {
-            //DecreaseHealth();
-            if (health == 0)
+            if (health.Death())
             {
-                //game over!
+                //activate death screen
+                //restart game
+                Debug.Log("YOU DIED GAME OVER");
             }
             this.gameObject.transform.position = startPos;
         }
@@ -126,19 +128,6 @@ public class Player : MonoBehaviour
     private void DontWallJump()
     {
         isWallJumping = false;
-    }
-
-    /*
-    public void DecreaseHealth()
-    {
-        health -= 1;
-        HealthUI.SetText(string.Format("Player lives: " + health));
-    }
-    */
-
-    public int GetHealth()
-    {
-        return health;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
