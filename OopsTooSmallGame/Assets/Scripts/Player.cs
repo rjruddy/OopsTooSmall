@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    public AudioClip jumpSound;
+    public AudioSource audioSource;
+
     Rigidbody2D rigbod;
     public float walkSpeed;
     public float jumpPower;
@@ -24,6 +28,7 @@ public class Player : MonoBehaviour
     private int health;
     private Vector2 wallNormal;
     private Vector3 startPos;
+    private bool jumped = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +36,8 @@ public class Player : MonoBehaviour
         startPos = this.gameObject.transform.position;
         rigbod = this.GetComponent<Rigidbody2D>();
         health = 3;
+        // audioSource = GetComponent<AudioSource>();
+        jumpSound = Resources.Load<AudioClip>("Sounds/jump");
     }
 
     // Update is called once per frame -- used to detect key presses
@@ -90,11 +97,18 @@ public class Player : MonoBehaviour
         {
             rigbod.velocity = new Vector2(rigbod.velocity.x, jumpPower);
             jumpPressed = false;
+            jumped = true;
         }
         if (jumpPressed && isWalled)
         {
             rigbod.velocity = new Vector2(rigbod.velocity.x, jumpPower);
             jumpPressed = false;
+            jumped = true;
+        }
+
+        if (jumped) {
+            audioSource.PlayOneShot(jumpSound);
+            jumped = false;
         }
     }
 
