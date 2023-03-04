@@ -5,22 +5,43 @@ using UnityEngine.UI;
 
 public class HealthUI : MonoBehaviour
 {
-    private static Text healthText;
+    public GameObject firstLife;
+    public GameObject secondLife;
+    public GameObject thirdLife;
+    public int lifeCounter = 3;
 
     // Start is called before the first frame update
     void Start()
     {
-        //healthText = this.GetComponent<Text>();
+        firstLife.SetActive(true);
+        secondLife.SetActive(true);
+        thirdLife.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
-    public static void SetText(string s)
+    public bool Death()
     {
-        healthText.text = s;
+        if (lifeCounter == 3)
+        {
+            firstLife.SetActive(false);
+            lifeCounter--;
+            return false;
+        }
+        else if(lifeCounter == 2){
+
+            secondLife.SetActive(false);
+            lifeCounter--;
+            return false;
+        }
+        else
+        {
+            thirdLife.SetActive(false);
+            lifeCounter = 0;
+            return true;
+        }
     }
 }
