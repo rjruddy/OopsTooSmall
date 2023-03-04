@@ -106,6 +106,7 @@ public class Player : MonoBehaviour
             jumpPressed = false;
             jumped = true;
         }
+        
         if (jumpPressed && isWalled)
         {
             isWallJumping = true;
@@ -126,8 +127,6 @@ public class Player : MonoBehaviour
         if (jumped) {
             audioSource.PlayOneShot(jumpSound);
             jumped = false;
-
-            
 
         }
     }
