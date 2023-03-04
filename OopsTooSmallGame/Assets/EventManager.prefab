@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 274.44, y: 171.83}
+  m_AnchoredPosition: {x: 390.8, y: 152.6}
   m_SizeDelta: {x: 251.1134, y: 30.3468}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2738185976858222385
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stars Collected: '
+  m_text: x00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c4f38595b41434a25982478e8125ecb3, type: 2}
   m_sharedMaterial: {fileID: -7174138237044775219, guid: c4f38595b41434a25982478e8125ecb3, type: 2}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 72.36069, y: 0, z: 118.08262, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
