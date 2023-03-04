@@ -21,7 +21,9 @@ public class Player : MonoBehaviour
     public float wjTime;
     public LayerMask groundLayer;
     public float deathLowBound;
+    public Collector starCounter;
     public HealthUI health;
+    
 
     private bool isGrounded;
     private bool isWalled;
@@ -149,6 +151,13 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("collision detected");
+        
+        /*if (collision.gameObject.CompareTag("star"))
+        {
+            Debug.Log("enteredStar");
+            starCounter.starCollected();
+            Destroy(collision.gameObject);
+        }*/
         if (isWalled)
         {
             wallTransform = collision.collider.GetComponent<Transform>();
@@ -161,6 +170,19 @@ public class Player : MonoBehaviour
             }
             */
         }
+
+
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("triggerEntered");
+        if (collision.gameObject.CompareTag("star"))
+        {
+            Debug.Log("enteredStar");
+            starCounter.starCollected();
+            Destroy(collision.gameObject);
+        }
+    }
+   
 }
