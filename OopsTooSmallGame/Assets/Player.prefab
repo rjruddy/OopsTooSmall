@@ -138,7 +138,7 @@ MonoBehaviour:
   walkSpeed: 5
   jumpPower: 8
   wallJumpPower: 0
-  groundCheck: {fileID: 0}
+  groundCheck: {fileID: 6634342890583248046}
   wallCheck: {fileID: 4749236203644703405}
   wallCheckRadius: 0.2
   groundCheckRadius: 0.2
