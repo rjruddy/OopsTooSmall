@@ -7,11 +7,13 @@ public class Player : MonoBehaviour
     Rigidbody2D rigbod;
     public float walkSpeed;
     public float jumpPower;
+    public float wallJumpPower;
     public Transform groundCheck;
     public Transform wallCheck;
     public float wallCheckRadius;
     public float groundCheckRadius;
     public float wallSlideSpeed;
+    public float wjTime;
     public LayerMask groundLayer;
     public float deathLowBound;
 
@@ -24,6 +26,8 @@ public class Player : MonoBehaviour
     private int health;
     private Vector2 wallNormal;
     private Vector3 startPos;
+
+    private Transform wallTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +59,7 @@ public class Player : MonoBehaviour
             //DecreaseHealth();
             if (health == 0)
             {
-
+                //game over!
             }
             this.gameObject.transform.position = startPos;
         }
@@ -64,7 +68,10 @@ public class Player : MonoBehaviour
     // used to implement movement
     void FixedUpdate()
     {
-        TryMove();
+        if (!isWallJumping)
+        {
+            TryMove();
+        }
         TryJump();
         TryWallBehavior();
     }
@@ -93,8 +100,17 @@ public class Player : MonoBehaviour
         }
         if (jumpPressed && isWalled)
         {
-            rigbod.velocity = new Vector2(rigbod.velocity.x, jumpPower);
+            isWallJumping = true;
+            float modifier = wallJumpPower;
+            //RIGHT WALL:
+            if (wallTransform.position.x > this.transform.position.x)
+            {
+                Debug.Log("wall is on the right");
+                modifier = -modifier;
+            }
+            rigbod.AddForce(new Vector2(modifier, jumpPower * 15));
             jumpPressed = false;
+            Invoke("DontWallJump", wjTime);
         }
     }
 
@@ -107,15 +123,39 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void DontWallJump()
+    {
+        isWallJumping = false;
+    }
+
+    /*
     public void DecreaseHealth()
     {
         health -= 1;
         HealthUI.SetText(string.Format("Player lives: " + health));
     }
+    */
 
     public int GetHealth()
     {
         return health;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("collision detected");
+        if (isWalled)
+        {
+            wallTransform = collision.collider.GetComponent<Transform>();
+            /*
+            //check if collision is a platform
+            if (collision.collider.GetComponent<SortingLayer>().ToString() == "Ground")
+            {
+                Debug.Log("platform collision detected");
+                wall = collision.collider.GetComponent<GameObject>();
+            }
+            */
+        }
     }
 
 }
