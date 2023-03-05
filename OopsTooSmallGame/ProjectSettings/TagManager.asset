@@ -8,6 +8,7 @@ TagManager:
   - f-vent
   - b-vent
   - star
+  - key
   layers:
   - Default
   - TransparentFX
