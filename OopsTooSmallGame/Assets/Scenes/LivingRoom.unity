@@ -1627,6 +1627,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1197505599}
     - target: {fileID: 4749236203791305011, guid: 0d8a24018146f4278b562a8d4d9f001c, type: 3}
+
       propertyPath: starCounter
       value: 
       objectReference: {fileID: 1591154654}
@@ -1634,6 +1635,7 @@ PrefabInstance:
       propertyPath: wallJumpPower
       value: 3
       objectReference: {fileID: 0}
+
     - target: {fileID: 4749236203791305021, guid: 0d8a24018146f4278b562a8d4d9f001c, type: 3}
       propertyPath: m_RootOrder
       value: 1

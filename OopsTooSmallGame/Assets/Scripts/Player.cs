@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
     private float horizontal;
     private Vector3 startPos;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -105,6 +106,10 @@ public class Player : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
 
+
+
+
+
         //this makes the player fall normally when wall jumping without input
         if (!(freeFalling && horizontal == 0)) {
             rigbod.velocity = new Vector2(horizontal * walkSpeed, rigbod.velocity.y);
@@ -122,6 +127,7 @@ public class Player : MonoBehaviour
         else { 
 
             if (jumpPressed && isGrounded)
+
             {
                 rigbod.velocity = new Vector2(rigbod.velocity.x, jumpPower);
                 jumpPressed = false;
@@ -156,6 +162,7 @@ public class Player : MonoBehaviour
 
                 canJump = false;
 
+
                 Invoke("ReenableJump", jumpCooldown);
 
                 return;
@@ -166,7 +173,9 @@ public class Player : MonoBehaviour
         
     }
 
+
     private void ReenableJump() {
+
         canJump = true;
     }
 
@@ -188,6 +197,7 @@ public class Player : MonoBehaviour
     {
 
         Debug.Log("collision detected");
+
 
         if (isWalled)
         {
