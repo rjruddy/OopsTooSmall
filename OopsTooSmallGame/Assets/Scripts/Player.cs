@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public float jumpCooldown = 1f;
 
     public Collector starCounter;
+    public EventManager evmanScript;
     public HealthUI health;
     public LayerMask groundLayer;
     public Transform groundCheck;
@@ -124,7 +125,8 @@ public class Player : MonoBehaviour
             {
                 rigbod.velocity = new Vector2(rigbod.velocity.x, jumpPower);
                 jumpPressed = false;
-                jumped = true;
+
+                audioSource.PlayOneShot(jumpSound);
 
                 // Debug.Log("jump from ground");
                 canJump = false;
@@ -150,18 +152,13 @@ public class Player : MonoBehaviour
 
                 Invoke("DontWallJump", wjTime);
 
-                jumped = true;
+                audioSource.PlayOneShot(jumpSound);
+
                 canJump = false;
 
                 Invoke("ReenableJump", jumpCooldown);
 
                 return;
-
-            }
-
-            if (jumped) {
-                audioSource.PlayOneShot(jumpSound);
-                jumped = false;
 
             }
         }
@@ -213,8 +210,11 @@ public class Player : MonoBehaviour
         Debug.Log("triggerEntered");
         if (collision.gameObject.CompareTag("star"))
         {
-            Debug.Log("enteredStar");
             starCounter.starCollected();
+            Destroy(collision.gameObject);
+        } else if (collision.gameObject.CompareTag("key"))
+        {
+            evmanScript.CollectedKey();
             Destroy(collision.gameObject);
         }
     }
