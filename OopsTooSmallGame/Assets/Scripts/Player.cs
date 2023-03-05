@@ -13,34 +13,30 @@ public class Player : MonoBehaviour
     public float walkSpeed;
     public float jumpPower;
     public float wallJumpPower;
-    public Transform groundCheck;
-    public Transform wallCheck;
     public float wallCheckRadius;
     public float groundCheckRadius;
     public float wallSlideSpeed;
     public float wjTime;
-    public LayerMask groundLayer;
     public float deathLowBound;
+    public float jumpCooldown = 1f;
+
     public Collector starCounter;
     public HealthUI health;
-    
+    public LayerMask groundLayer;
+    public Transform groundCheck;
+    public Transform wallCheck;
 
+    private Transform wallTransform;
     private bool isGrounded;
     private bool isWalled;
     private bool isWallJumping;
     private bool jumpPressed;
-    private bool canWallJump;
-    private float horizontal;
+    private bool canJump;
     private bool freeFalling;
-    //private int health;
-    private Vector2 wallNormal;
-    private Vector3 startPos;
     private bool jumped = false;
 
-    public bool canJump;
-    public float jumpCooldown = 1f;
-
-    private Transform wallTransform;
+    private float horizontal;
+    private Vector3 startPos;
 
     // Start is called before the first frame update
     void Start()
@@ -138,8 +134,8 @@ public class Player : MonoBehaviour
                 jumped = true;
 
                 // Debug.Log("jump from ground");
-                // canJump = false;
-                StartCoroutine(StartCooldown());
+                canJump = false;
+                Invoke("ReenableJump", jumpCooldown);
 
                 return;
             }
@@ -166,7 +162,7 @@ public class Player : MonoBehaviour
                 jumped = true;
                 canJump = false;
                 // Debug.Log("jump from wall");
-                StartCoroutine(StartCooldown());
+                Invoke("ReenableJump", jumpCooldown);
 
                 return;
 
@@ -177,20 +173,12 @@ public class Player : MonoBehaviour
                 jumped = false;
 
             }
-
-            
-
-
         }
         return;
         
     }
 
-    IEnumerator StartCooldown() {
-        canJump = false;
-        Debug.Log("CoroutineExample started at " + Time.time.ToString() + "s");         
-        yield return new WaitForSeconds(jumpCooldown);
-        Debug.Log("Coroutine Iteration Successful at " + Time.time.ToString() + "s");   
+    private void ReenableJump() {
         canJump = true;
     }
 
@@ -212,13 +200,6 @@ public class Player : MonoBehaviour
     {
 
         Debug.Log("collision detected");
-        
-        /*if (collision.gameObject.CompareTag("star"))
-        {
-            Debug.Log("enteredStar");
-            starCounter.starCollected();
-            Destroy(collision.gameObject);
-        }*/
 
         if (isWalled)
         {
