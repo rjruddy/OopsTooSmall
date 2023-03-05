@@ -13,30 +13,30 @@ public class Player : MonoBehaviour
     public float walkSpeed;
     public float jumpPower;
     public float wallJumpPower;
-    public Transform groundCheck;
-    public Transform wallCheck;
     public float wallCheckRadius;
     public float groundCheckRadius;
     public float wallSlideSpeed;
     public float wjTime;
-    public LayerMask groundLayer;
     public float deathLowBound;
+    public float jumpCooldown = 1f;
+
     public Collector starCounter;
     public HealthUI health;
-    
+    public LayerMask groundLayer;
+    public Transform groundCheck;
+    public Transform wallCheck;
 
+    private Transform wallTransform;
     private bool isGrounded;
     private bool isWalled;
     private bool isWallJumping;
     private bool jumpPressed;
-    private bool canWallJump;
-    private float horizontal;
-    //private int health;
-    private Vector2 wallNormal;
-    private Vector3 startPos;
+    private bool canJump;
+    private bool freeFalling;
     private bool jumped = false;
 
-    private Transform wallTransform;
+    private float horizontal;
+    private Vector3 startPos;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +46,8 @@ public class Player : MonoBehaviour
         //health = 3;
         audioSource = GetComponent<AudioSource>();
         jumpSound = Resources.Load<AudioClip>("Sounds/jump");
+        canJump = true;
+        freeFalling = false;
     }
 
     // Update is called once per frame -- used to detect key presses
@@ -59,12 +61,16 @@ public class Player : MonoBehaviour
                                             wallCheckRadius,
                                             groundLayer);
         bool upPressed = Input.GetKey("up") || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W);
+        
+        if (isGrounded) {
+            freeFalling = false;
+        }
+
         if (upPressed && (isGrounded || isWalled))
         {
             jumpPressed = true;
         }
-         //If lives being lost needs to be implemented, add it within this
-         //if statement
+         
         if(this.gameObject.transform.position.y < deathLowBound)
         {
             if (health.Death())
@@ -81,8 +87,9 @@ public class Player : MonoBehaviour
         if (!isWallJumping)
         {
             TryMove();
+            TryJump();
+
         }
-        TryJump();
         TryWallBehavior();
     }
 
@@ -96,42 +103,74 @@ public class Player : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
-        rigbod.velocity = new Vector2(horizontal * walkSpeed, rigbod.velocity.y);
 
-        //TryJump();
+        //this makes the player fall normally when wall jumping without input
+        if (!(freeFalling && horizontal == 0)) {
+            rigbod.velocity = new Vector2(horizontal * walkSpeed, rigbod.velocity.y);
+        } 
     }
 
     private void TryJump()
     {
-        if (jumpPressed && isGrounded)
-        {
-            rigbod.velocity = new Vector2(rigbod.velocity.x, jumpPower);
+
+        if (!canJump) {
             jumpPressed = false;
-            jumped = true;
+            return;
         }
-        
-        if (jumpPressed && isWalled)
-        {
-            isWallJumping = true;
-            float modifier = wallJumpPower;
-            //RIGHT WALL:
-            if (wallTransform.position.x > this.transform.position.x)
+
+        else { 
+
+            if (jumpPressed && isGrounded)
             {
-                Debug.Log("wall is on the right");
-                modifier = -modifier;
+                rigbod.velocity = new Vector2(rigbod.velocity.x, jumpPower);
+                jumpPressed = false;
+                jumped = true;
+
+                // Debug.Log("jump from ground");
+                canJump = false;
+                Invoke("ReenableJump", jumpCooldown);
+
+                return;
             }
-            rigbod.AddForce(new Vector2(modifier, jumpPower * 15));
-            jumpPressed = false;
-            Invoke("DontWallJump", wjTime);
+        
+            if (jumpPressed && isWalled)
+            {
 
-            jumped = true;
+                
+                isWallJumping = true;
+                float modifier = wallJumpPower;
+                //RIGHT WALL:
+                if (wallTransform.position.x > this.transform.position.x)
+                {
+                    modifier = -modifier;
+                }
+                // rigbod.AddForce(new Vector2(modifier, jumpPower * 10));
+                rigbod.velocity = new Vector2(modifier, jumpPower);
+                freeFalling = true;
+
+                Invoke("DontWallJump", wjTime);
+
+                jumped = true;
+                canJump = false;
+
+                Invoke("ReenableJump", jumpCooldown);
+
+                return;
+
+            }
+
+            if (jumped) {
+                audioSource.PlayOneShot(jumpSound);
+                jumped = false;
+
+            }
         }
+        return;
+        
+    }
 
-        if (jumped) {
-            audioSource.PlayOneShot(jumpSound);
-            jumped = false;
-
-        }
+    private void ReenableJump() {
+        canJump = true;
     }
 
     private void TryWallBehavior()
@@ -150,14 +189,9 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         Debug.Log("collision detected");
-        
-        /*if (collision.gameObject.CompareTag("star"))
-        {
-            Debug.Log("enteredStar");
-            starCounter.starCollected();
-            Destroy(collision.gameObject);
-        }*/
+
         if (isWalled)
         {
             wallTransform = collision.collider.GetComponent<Transform>();
