@@ -10,6 +10,7 @@ TagManager:
   - star
   - key
   - boss-head
+  - boss-body
   layers:
   - Default
   - TransparentFX

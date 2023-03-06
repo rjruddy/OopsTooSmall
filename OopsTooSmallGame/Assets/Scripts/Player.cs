@@ -226,6 +226,13 @@ public class Player : MonoBehaviour
         } else if (collision.gameObject.CompareTag("boss-head"))
         {
             SceneManager.LoadScene("WinScreen");
+        } else if (collision.gameObject.CompareTag("boss-body"))
+        {
+            if (health.Death())
+            {
+                SceneManager.LoadScene("LoseScreen");
+            }
+            this.gameObject.transform.position = startPos;
         }
     }
    
