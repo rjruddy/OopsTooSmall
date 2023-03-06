@@ -3333,7 +3333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_character: {fileID: 2051529638}
   screen_height: 2
-  screen_width: 12
+  screen_width: 10
 --- !u!1001 &1097594300
 PrefabInstance:
   m_ObjectHideFlags: 0
