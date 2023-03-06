@@ -9,6 +9,8 @@ TagManager:
   - b-vent
   - star
   - key
+  - boss-head
+  - boss-body
   layers:
   - Default
   - TransparentFX
