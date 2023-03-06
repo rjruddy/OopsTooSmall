@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LivingRoomInverse.unity
     guid: 99fd963ced39248be867aa1636cdecbd
   - enabled: 1
+    path: Assets/Scenes/BasementBoss.unity
+    guid: e1068f67c754d4a5ea84da3101b69617
+  - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: 8f8c6beece70f4e66b30a4b27056d898
   - enabled: 1

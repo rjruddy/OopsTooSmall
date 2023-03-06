@@ -3066,7 +3066,7 @@ GameObject:
   - component: {fileID: 1976548770}
   m_Layer: 6
   m_Name: ReturnVent
-  m_TagString: Untagged
+  m_TagString: b-vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public AudioSource audioSource;
 
     public AudioClip deathSound;
+    public KeyHandler keyHandler;
 
     Rigidbody2D rigbod;
     public float walkSpeed;
@@ -77,7 +78,7 @@ public class Player : MonoBehaviour
         if(this.gameObject.transform.position.y < deathLowBound)
         {
 
-            SoundManager.Instance.PlayDeathSound(deathSound);
+            // SoundManager.Instance.PlayDeathSound(deathSound);
             if (health.Death())
             {
                 SceneManager.LoadScene("LoseScreen");
@@ -227,8 +228,10 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
         } else if (collision.gameObject.CompareTag("key"))
         {
+            keyHandler.obtain_key();
             evmanScript.CollectedKey();
             Destroy(collision.gameObject);
+
         } else if (collision.gameObject.CompareTag("boss-head"))
         {
             SceneManager.LoadScene("WinScreen");

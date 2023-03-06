@@ -1,0 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "KeyHandler", menuName = "KeyHandler", order = 1)]
+public class KeyHandler : ScriptableObject
+{
+
+    [SerializeField]
+    public bool has_key = false;
+
+
+    public bool get_key { get => has_key; }
+
+    public void obtain_key() {
+        has_key = true;
+    }
+}
+
