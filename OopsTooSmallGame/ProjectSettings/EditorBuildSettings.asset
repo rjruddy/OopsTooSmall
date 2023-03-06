@@ -18,14 +18,23 @@ EditorBuildSettings:
     path: Assets/Scenes/LivingRoom.unity
     guid: a27427b6e5bc84444bebdf3cad361612
   - enabled: 1
+    path: Assets/Scenes/Kitchen.unity
+    guid: c14238dde2e5044378eda14325bca0de
+  - enabled: 1
     path: Assets/Scenes/Bedroom.unity
     guid: 3949f0de700504dbd99f9b3f81ea2fea
   - enabled: 1
     path: Assets/Scenes/Bathroom.unity
     guid: af016e7ebcbe940adacf3f37be8dc614
   - enabled: 1
-    path: Assets/Scenes/Kitchen.unity
-    guid: c14238dde2e5044378eda14325bca0de
+    path: Assets/Scenes/BedroomInverse.unity
+    guid: 880892abe84b14bc2b52e6400d7cf396
+  - enabled: 1
+    path: Assets/Scenes/KitchenInverse.unity
+    guid: 1d76c866edf1b4930aa3e502f7555970
+  - enabled: 1
+    path: Assets/Scenes/LivingRoomInverse.unity
+    guid: 99fd963ced39248be867aa1636cdecbd
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: 8f8c6beece70f4e66b30a4b27056d898

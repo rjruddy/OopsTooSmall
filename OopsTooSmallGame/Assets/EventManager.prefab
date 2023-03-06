@@ -1532,6 +1532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 8174399248761294909}
   playerUI: {fileID: 1967314506941510047}
+  keyCollector: {fileID: 994201912956638137}
 --- !u!1 &8174399249327161155
 GameObject:
   m_ObjectHideFlags: 0

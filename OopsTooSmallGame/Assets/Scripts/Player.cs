@@ -34,7 +34,6 @@ public class Player : MonoBehaviour
     private bool jumpPressed;
     private bool canJump;
     private bool freeFalling;
-    private bool jumped = false;
 
     private float horizontal;
     private Vector3 startPos;
@@ -195,10 +194,6 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-        Debug.Log("collision detected");
-
-
         if (isWalled)
         {
             wallTransform = collision.collider.GetComponent<Transform>();
@@ -217,7 +212,6 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("triggerEntered");
         if (collision.gameObject.CompareTag("star"))
         {
             starCounter.starCollected();
