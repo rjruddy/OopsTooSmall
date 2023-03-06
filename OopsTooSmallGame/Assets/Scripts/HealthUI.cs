@@ -10,12 +10,19 @@ public class HealthUI : MonoBehaviour
     public GameObject thirdLife;
     public int lifeCounter = 3;
 
+
+    // public AudioClip deathSound;
+    // public AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         firstLife.SetActive(true);
         secondLife.SetActive(true);
         thirdLife.SetActive(true);
+
+        // audioSource = GetComponent<AudioSource>();
+        // deathSound = Resources.Load<AudioClip>("Sounds/death");
     }
 
     // Update is called once per frame
@@ -25,6 +32,9 @@ public class HealthUI : MonoBehaviour
 
     public bool Death()
     {
+        // audioSource.PlayOneShot(deathSound);
+        // SoundManager.Instance.PlayDeathSound(deathSound);
+
         if (lifeCounter == 3)
         {
             firstLife.SetActive(false);
