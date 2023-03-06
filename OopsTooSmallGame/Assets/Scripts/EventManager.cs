@@ -15,6 +15,7 @@ public class EventManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject playerUI;
     public GameObject keyCollector;
+    public AudioClip clickSound;
 
     //Variables holding collectibles found in each room
     private int livCount;
@@ -48,6 +49,7 @@ public class EventManager : MonoBehaviour
 
     public void DisablePause()
     {
+        SoundManager.Instance.PlayClickSound(clickSound);
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }

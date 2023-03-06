@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public AudioClip jumpSound;
     public AudioSource audioSource;
 
+    public AudioClip deathSound;
+
     Rigidbody2D rigbod;
     public float walkSpeed;
     public float jumpPower;
@@ -74,10 +76,14 @@ public class Player : MonoBehaviour
          
         if(this.gameObject.transform.position.y < deathLowBound)
         {
+
+            SoundManager.Instance.PlayDeathSound(deathSound);
             if (health.Death())
             {
                 SceneManager.LoadScene("LoseScreen");
             }
+            
+
             this.gameObject.transform.position = startPos;
         }
     }
