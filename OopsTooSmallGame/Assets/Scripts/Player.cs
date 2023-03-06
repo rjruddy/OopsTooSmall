@@ -194,6 +194,8 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        wallTransform = collision.collider.GetComponent<Transform>();
+        /*
         if (isWalled)
         {
             wallTransform = collision.collider.GetComponent<Transform>();
@@ -204,8 +206,9 @@ public class Player : MonoBehaviour
                 Debug.Log("platform collision detected");
                 wall = collision.collider.GetComponent<GameObject>();
             }
-            */
+            
         }
+        */
 
 
     }
@@ -220,6 +223,9 @@ public class Player : MonoBehaviour
         {
             evmanScript.CollectedKey();
             Destroy(collision.gameObject);
+        } else if (collision.gameObject.CompareTag("boss-head"))
+        {
+            SceneManager.LoadScene("WinScreen");
         }
     }
    
