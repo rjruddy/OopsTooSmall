@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class EndButtons : MonoBehaviour
 {
+    public KeyHandler keyHandler;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +21,13 @@ public class EndButtons : MonoBehaviour
 
     public void QuitGame()
     {
+        keyHandler.lose_key();
         SceneManager.LoadScene("TitleScreen");
     }
 
     public void RestartGame()
     {
+        keyHandler.lose_key();
         SceneManager.LoadScene("LivingRoom");
     }
 }

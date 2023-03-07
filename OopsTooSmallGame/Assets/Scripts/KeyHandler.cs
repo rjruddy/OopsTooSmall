@@ -12,6 +12,11 @@ public class KeyHandler : ScriptableObject
 
     public bool get_key { get => has_key; }
 
+    public void lose_key()
+    {
+        has_key = false;
+    }
+
     public void obtain_key() {
         has_key = true;
     }

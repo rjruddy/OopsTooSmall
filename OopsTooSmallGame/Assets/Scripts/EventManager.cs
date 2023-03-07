@@ -16,6 +16,7 @@ public class EventManager : MonoBehaviour
     public GameObject playerUI;
     public GameObject keyCollector;
     public AudioClip clickSound;
+    public KeyHandler keyHandler;
 
     //Variables holding collectibles found in each room
     private int livCount;
@@ -45,6 +46,12 @@ public class EventManager : MonoBehaviour
         {
             playerUI.SetActive(false);
         }
+
+        //check for key
+        if (keyHandler.get_key)
+        {
+            keyCollector.SetActive(true);
+        }
     }
 
     public void DisablePause()
@@ -54,8 +61,10 @@ public class EventManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    /*
     public void CollectedKey()
     {
         keyCollector.SetActive(true);
     }
+    */
 }

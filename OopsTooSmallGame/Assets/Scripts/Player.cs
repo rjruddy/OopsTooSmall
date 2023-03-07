@@ -229,7 +229,7 @@ public class Player : MonoBehaviour
         } else if (collision.gameObject.CompareTag("key"))
         {
             keyHandler.obtain_key();
-            evmanScript.CollectedKey();
+            //evmanScript.CollectedKey();
             Destroy(collision.gameObject);
 
         } else if (collision.gameObject.CompareTag("boss-head"))

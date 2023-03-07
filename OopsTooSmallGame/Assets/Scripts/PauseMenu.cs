@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public EventManager evmanScript;
+    public KeyHandler keyHandler;
     // public AudioClip clickSound;
 
     // Start is called before the first frame update
@@ -29,6 +30,7 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         // SoundManager.Instance.PlayClickSound(clickSound);
+        keyHandler.lose_key();
         evmanScript.DisablePause();
         SceneManager.LoadScene("TitleScreen");
     }

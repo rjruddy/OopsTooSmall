@@ -1534,6 +1534,7 @@ MonoBehaviour:
   playerUI: {fileID: 1967314506941510047}
   keyCollector: {fileID: 994201912956638137}
   clickSound: {fileID: 8300000, guid: f35b957c717b4496d9cf9c61ccc84bad, type: 3}
+  keyHandler: {fileID: 11400000, guid: c41d4ca237b5c4e1098851a533059570, type: 2}
 --- !u!1 &8174399249327161155
 GameObject:
   m_ObjectHideFlags: 0
