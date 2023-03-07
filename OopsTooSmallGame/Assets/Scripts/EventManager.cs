@@ -49,7 +49,7 @@ public class EventManager : MonoBehaviour
 
     public void DisablePause()
     {
-        SoundManager.Instance.PlayClickSound(clickSound);
+        //SoundManager.Instance.PlayClickSound(clickSound);
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
