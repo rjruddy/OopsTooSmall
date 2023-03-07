@@ -18,12 +18,6 @@ public class EventManager : MonoBehaviour
     public AudioClip clickSound;
     public KeyHandler keyHandler;
 
-    //Variables holding collectibles found in each room
-    private int livCount;
-    private int kitCount;
-    private int bedCount;
-    private int batCount;
-
     void Start()
     {
         pauseMenu.SetActive(false);

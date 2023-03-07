@@ -1214,6 +1214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evmanScript: {fileID: 8174399249067224388}
+  keyHandler: {fileID: 11400000, guid: c41d4ca237b5c4e1098851a533059570, type: 2}
 --- !u!1 &8174399248780605538
 GameObject:
   m_ObjectHideFlags: 0
