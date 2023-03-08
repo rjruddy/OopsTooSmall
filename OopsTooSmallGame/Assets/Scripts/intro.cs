@@ -9,11 +9,12 @@ public class intro : MonoBehaviour
     public GameObject second_intro;
     public GameObject third_intro;
     public GameObject fourth_intro;
+    public GameObject beginText;
     public int count = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+        beginText.SetActive(true);
     }
 
     // Update is called once per frame
@@ -21,6 +22,7 @@ public class intro : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            beginText.SetActive(false);
             if (count == 0)
             {
                 first_intro.SetActive(true);
