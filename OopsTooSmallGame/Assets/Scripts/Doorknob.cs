@@ -7,10 +7,11 @@ public class Doorknob : MonoBehaviour
 {
     // Start is called before the first frame update
     public KeyHandler keyHandler;
+    public GameObject lock_text;
 
     void Start()
     {
-        
+        lock_text.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,9 +24,17 @@ public class Doorknob : MonoBehaviour
         if (keyHandler.get_key) {
             // open door
             SceneManager.LoadScene("BasementBoss");
-
+        } else
+        {
+            lock_text.SetActive(true);
+            Invoke("HideLockText", 3f);
         }
 
+    }
+
+    void HideLockText()
+    {
+        lock_text.SetActive(false);
     }
 
 }
