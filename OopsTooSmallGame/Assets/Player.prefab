@@ -135,7 +135,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpSound: {fileID: 8300000, guid: 6d46527350a5e419f9cea64a31f90931, type: 3}
   audioSource: {fileID: 4749236203791305016}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 6ab8388be0e1640a0aaba0b53035e6cf, type: 3}
+  collectSound: {fileID: 8300000, guid: 1008dda7fbc8b46f6bff26d945386762, type: 3}
   keyHandler: {fileID: 11400000, guid: c41d4ca237b5c4e1098851a533059570, type: 2}
   walkSpeed: 5
   jumpPower: 8

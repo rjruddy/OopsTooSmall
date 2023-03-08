@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public AudioSource audioSource;
 
     public AudioClip deathSound;
+    public AudioClip collectSound;
     public KeyHandler keyHandler;
 
     Rigidbody2D rigbod;
@@ -78,7 +79,8 @@ public class Player : MonoBehaviour
         if(this.gameObject.transform.position.y < deathLowBound)
         {
 
-            // SoundManager.Instance.PlayDeathSound(deathSound);
+            //SoundManager.Instance.PlayDeathSound(deathSound);
+            audioSource.PlayOneShot(deathSound);
             if (health.Death())
             {
                 SceneManager.LoadScene("LoseScreen");
@@ -225,6 +227,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("star"))
         {
             starCounter.starCollected();
+            audioSource.PlayOneShot(collectSound);
             Destroy(collision.gameObject);
         } else if (collision.gameObject.CompareTag("key"))
         {

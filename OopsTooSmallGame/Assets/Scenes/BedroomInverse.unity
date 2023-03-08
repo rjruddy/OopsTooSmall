@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 73521599}
   - component: {fileID: 73521598}
+  - component: {fileID: 73521600}
   m_Layer: 6
   m_Name: bedroom(2_28)
   m_TagString: Untagged
@@ -218,6 +219,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &73521600
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73521597}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b561f53bc8c834711908aad86d979f60, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.51
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &74637604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -349,6 +446,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 790abdac02dd34661b8a6068a1c0160d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &86129680 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8174399249067224388, guid: bdb4ba43038f941c29771be64d8f42a8, type: 3}
+  m_PrefabInstance: {fileID: 86129678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a9bf800fa30343f9a44cb32922a0d8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &86129681 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5344956780817236182, guid: bdb4ba43038f941c29771be64d8f42a8, type: 3}
+  m_PrefabInstance: {fileID: 86129678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d797ea2b6f20462c92163e9b2ff8290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &126073918
@@ -2765,6 +2884,14 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 86129679}
+    - target: {fileID: 4749236203791305011, guid: 0d8a24018146f4278b562a8d4d9f001c, type: 3}
+      propertyPath: evmanScript
+      value: 
+      objectReference: {fileID: 86129680}
+    - target: {fileID: 4749236203791305011, guid: 0d8a24018146f4278b562a8d4d9f001c, type: 3}
+      propertyPath: starCounter
+      value: 
+      objectReference: {fileID: 86129681}
     - target: {fileID: 4749236203791305021, guid: 0d8a24018146f4278b562a8d4d9f001c, type: 3}
       propertyPath: m_RootOrder
       value: 3
