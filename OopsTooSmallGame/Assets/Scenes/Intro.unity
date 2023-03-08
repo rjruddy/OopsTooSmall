@@ -864,9 +864,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Once upon a time, someone you called a dear friend betrayed you. He offered
-    you a drink. You didn\u2019t think much of it, but suddenly you felt weird. Your
-    insides felt like they were becoming\u2026 gooey? "
+  m_text: "Once upon a time, someone you called a dear friend betrayed you. You didn\u2019t
+    think much of it, but he offered you a drink. All of the sudden, there was a
+    strange sensation deep in your stomach. Your insides were becoming\u2026 gooey? "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c4f38595b41434a25982478e8125ecb3, type: 2}
   m_sharedMaterial: {fileID: -7174138237044775219, guid: c4f38595b41434a25982478e8125ecb3, type: 2}
