@@ -9,6 +9,8 @@ public class KeyHandler : ScriptableObject
     [SerializeField]
     public bool has_key = false;
 
+    private int starsCollected;
+
 
     public bool get_key { get => has_key; }
 
