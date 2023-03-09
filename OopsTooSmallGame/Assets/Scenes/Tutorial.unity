@@ -1485,7 +1485,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: There are 3 stars in every level; try collecting one here!
+  m_text: There is one star in every level; try collecting one here!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c4f38595b41434a25982478e8125ecb3, type: 2}
   m_sharedMaterial: {fileID: -7174138237044775219, guid: c4f38595b41434a25982478e8125ecb3, type: 2}

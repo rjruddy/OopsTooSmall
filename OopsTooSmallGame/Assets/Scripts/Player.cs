@@ -156,25 +156,28 @@ public class Player : MonoBehaviour
                 isWallJumping = true;
                 float modifier = wallJumpPower;
                 //RIGHT WALL:
-                if (wallTransform.position.x > this.transform.position.x)
+                if (wallTransform != null)
                 {
-                    modifier = -modifier;
+                    if (wallTransform.position.x > this.transform.position.x)
+                    {
+                        modifier = -modifier;
+                    }
+                    // rigbod.AddForce(new Vector2(modifier, jumpPower * 10));
+                    rigbod.velocity = new Vector2(modifier, jumpPower);
+                    freeFalling = true;
+
+                    Invoke("DontWallJump", wjTime);
+
+                    audioSource.PlayOneShot(jumpSound);
+
+                    canJump = false;
+
+
+                    Invoke("ReenableJump", jumpCooldown);
+
+                    return;
+
                 }
-                // rigbod.AddForce(new Vector2(modifier, jumpPower * 10));
-                rigbod.velocity = new Vector2(modifier, jumpPower);
-                freeFalling = true;
-
-                Invoke("DontWallJump", wjTime);
-
-                audioSource.PlayOneShot(jumpSound);
-
-                canJump = false;
-
-
-                Invoke("ReenableJump", jumpCooldown);
-
-                return;
-
             }
         }
         return;
