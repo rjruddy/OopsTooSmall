@@ -9,10 +9,11 @@ public class KeyHandler : ScriptableObject
     [SerializeField]
     public bool has_key = false;
 
-    private int starsCollected;
+    private int starsCollected = 0;
 
 
     public bool get_key { get => has_key; }
+    public int get_stars { get => starsCollected; }
 
     public void lose_key()
     {
@@ -21,6 +22,16 @@ public class KeyHandler : ScriptableObject
 
     public void obtain_key() {
         has_key = true;
+    }
+
+    public void IncrementStars()
+    {
+        starsCollected += 1;
+    }
+
+    public void reset_stars()
+    {
+        starsCollected = 0;
     }
 }
 

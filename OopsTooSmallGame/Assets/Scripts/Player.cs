@@ -230,12 +230,12 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("star"))
         {
             starCounter.starCollected();
+            keyHandler.IncrementStars();
             audioSource.PlayOneShot(collectSound);
             Destroy(collision.gameObject);
         } else if (collision.gameObject.CompareTag("key"))
         {
             keyHandler.obtain_key();
-            //evmanScript.CollectedKey();
             Destroy(collision.gameObject);
 
         } else if (collision.gameObject.CompareTag("boss-head"))

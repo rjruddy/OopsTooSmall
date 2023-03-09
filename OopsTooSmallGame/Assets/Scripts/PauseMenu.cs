@@ -31,6 +31,7 @@ public class PauseMenu : MonoBehaviour
     {
         // SoundManager.Instance.PlayClickSound(clickSound);
         keyHandler.lose_key();
+        keyHandler.reset_stars();
         evmanScript.DisablePause();
         SceneManager.LoadScene("TitleScreen");
     }

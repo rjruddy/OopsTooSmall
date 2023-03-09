@@ -416,11 +416,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &226597705 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8168490238737454294, guid: f1cbcb11a0d44488faecfe566e5883c6, type: 3}
-  m_PrefabInstance: {fileID: 1137640169}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &231421526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,11 +1260,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2794217234243016610, guid: ea27955c9f1294a9c80778aabbad8e4e, type: 3}
   m_PrefabInstance: {fileID: 517740393}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &543151318 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8168490238737454294, guid: f1cbcb11a0d44488faecfe566e5883c6, type: 3}
-  m_PrefabInstance: {fileID: 653736144}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &586432197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1447,20 +1437,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8168490238737454289, guid: f1cbcb11a0d44488faecfe566e5883c6, type: 3}
   m_PrefabInstance: {fileID: 653736144}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &653736150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543151318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef3463bb22eb44429a1e3983c6a81788, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  starHandler: {fileID: 11400000, guid: 44e07c7461e874fc8b1fe36e71adf988, type: 2}
-  room_name: 
 --- !u!1 &923136006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,25 +1918,6 @@ MonoBehaviour:
   player_character: {fileID: 1402295631}
   screen_height: 3
   screen_width: 9
---- !u!1 &1097442804 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8168490238737454294, guid: f1cbcb11a0d44488faecfe566e5883c6, type: 3}
-  m_PrefabInstance: {fileID: 990108189}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1097442805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1097442804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef3463bb22eb44429a1e3983c6a81788, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  starHandler: {fileID: 11400000, guid: 44e07c7461e874fc8b1fe36e71adf988, type: 2}
-  room_name: 
 --- !u!1001 &1137640169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2023,20 +1980,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8168490238737454289, guid: f1cbcb11a0d44488faecfe566e5883c6, type: 3}
   m_PrefabInstance: {fileID: 1137640169}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1137640175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226597705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef3463bb22eb44429a1e3983c6a81788, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  starHandler: {fileID: 11400000, guid: 44e07c7461e874fc8b1fe36e71adf988, type: 2}
-  room_name: 
 --- !u!1001 &1197505598
 PrefabInstance:
   m_ObjectHideFlags: 0
